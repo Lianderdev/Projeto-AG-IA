@@ -93,7 +93,6 @@ header {
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
-    border-right: 1px solid #44475a;
     gap: 1rem;
 }
 
@@ -103,6 +102,23 @@ header {
     color: #f8f8f2;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid #44475a;
+}
+
+.sidebar-content i {
+    background: none;
+    border: none;
+    color: #44475a;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .editor-area {
@@ -287,5 +303,4 @@ footer {
 
 .terminal-output {
     color: #8be9fd;
-    margin-top: 1rem;
 }
