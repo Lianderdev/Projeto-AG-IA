@@ -1,101 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algoritmo Genético no VS Code Fake</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genetic Algorithm in Fake VS Code</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- Modal -->
-    <div id="infoModal" class="modal">
-        <div class="modal-content terminal-window">
-            <div class="terminal-bar">
-                <span class="circle red"></span>
-                <span class="circle yellow"></span>
-                <span class="circle green"></span>
-            </div>
-            <div class="terminal-body">
-                <h2 id="modalTitle"></h2>
-                <p id="modalText1"></p>
-                <p id="modalText2"></p>
-                <p id="modalText3"></p>
-                <button id="understoodButton" class="entendi" style="display:none;"
-                    onclick="closeModal()">Entendi</button>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="vscode-window">
-        <div class="mac-bar" role="banner" aria-label="Barra de janelas">
+  <div class="vscode-mockup">
+    <header>
+        <div class="window-header" role="banner" aria-label="Window bar">
             <span class="circle red" aria-hidden="true"></span>
             <span class="circle yellow" aria-hidden="true"></span>
             <span class="circle green" aria-hidden="true"></span>
         </div>
 
-        <div class="vscode-body">
-            <aside class="sidebar" aria-label="Barra lateral">
-                <button class="icon" title="Arquivos">📁</button>
-                <button class="icon" title="Pesquisar">🔍</button>
-                <button class="icon" title="Depurar">🐞</button>
-            </aside>
+        <div class="title">
+            <i class="fa-solid fa-lock"></i>
+            <p>Algoritmo Genérico</p>
+            <i class="fa-solid fa-rotate-right"></i>
+        </div>
 
-            <main class="editor-wrapper">
-                <div class="line-numbers" aria-hidden="true">
-                    <code>
+        <div class="icons">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-copy"></i>
+        </div>
+    </header>
+
+    <div class="vscode-body">
+      <aside class="sidebar" aria-label="Sidebar">
+        <button class="sidebar-icon" title="Files">📁</button>
+        <button class="sidebar-icon" title="Search">🔍</button>
+        <button class="sidebar-icon" title="Debug">🐞</button>
+      </aside>
+
+      <main class="editor-area">
+        <div class="line-numbers" aria-hidden="true">
+          <code>
             1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>
             11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>
             21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>
             31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40
           </code>
-                </div>
-
-                <div class="editor">
-                    <h1>// Configuração do Algoritmo Genético</h1>
-                    <form id="agForm" aria-label="Formulário do AG">
-                        <p class="comment">// número de indivíduos em cada geração</p>
-                        <div class="content-input">
-                            <label for="popSize"><span class="var">let</span> população =</label>
-                            <input type="number" id="popSize" name="popSize" min="2" required />
-                        </div>
-
-                        <p class="comment">// chance de alterar aleatoriamente um gene</p>
-                        <div class="content-input">
-                            <label for="mutationRate"><span class="var">let</span> mutação =</label>
-                            <input type="number" id="mutationRate" name="mutationRate" step="0.01" min="0" max="100"
-                                required />
-                        </div>
-
-                        <p class="comment">// quantidade de ciclos evolutivos</p>
-                        <div class="content-input">
-                            <label for="generations"><span class="var">let</span> gerações =</label>
-                            <input type="number" id="generations" name="generations" min="1" required />
-                        </div>
-
-                        <p class="comment">// string desejada que o AG deve atingir</p>
-                        <div class="content-input">
-                            <label for="target"><span class="var">let</span> alvo =</label>
-                            <input type="text" id="target" name="target" required />
-                        </div>
-
-                        <button type="submit" class="button">▶ | Run</button>
-                    </form>
-
-
-                    <footer>
-                        <div class="out">Terminal: Aguardando execução...</div>
-                    </footer>
-                </div>
-            </main>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <div class="code-editor">
+          <h1>// Genetic Algorithm Configuration</h1>
+          <form id="agForm" aria-label="Genetic Algorithm Form">
+            <p class="code-comment">// number of individuals per generation</p>
+            <div class="input-group">
+              <label for="popSize"><span class="code-var">let</span> population =</label>
+              <input type="number" id="popSize" name="popSize" min="2" required />
+            </div>
+
+            <p class="code-comment">// chance of random mutation of a gene</p>
+            <div class="input-group">
+              <label for="mutationRate"><span class="code-var">let</span> mutation =</label>
+              <input type="number" id="mutationRate" name="mutationRate" step="0.01" min="0" max="100" required />
+            </div>
+
+            <p class="code-comment">// number of evolutionary cycles</p>
+            <div class="input-group">
+              <label for="generations"><span class="code-var">let</span> generations =</label>
+              <input type="number" id="generations" name="generations" min="1" required />
+            </div>
+
+            <p class="code-comment">// desired target string</p>
+            <div class="input-group">
+              <label for="target"><span class="code-var">let</span> target =</label>
+              <input type="text" id="target" name="target" required />
+            </div>
+
+            <button type="submit" class="run-button">▶ | Run</button>
+          </form>
+
+          <footer>
+            <div class="terminal-output">Terminal: Waiting for execution...</div>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

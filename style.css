@@ -14,7 +14,7 @@ body {
     height: 100vh;
 }
 
-.vscode-window {
+.vscode-mockup {
     width: 90%;
     max-width: 1000px;
     height: 84vh;
@@ -22,16 +22,44 @@ body {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
-.mac-bar {
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #44475a;
+    padding: 10px 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 13px;
+    border: 1px solid #44475a;
+    border-radius: 7px;
+    padding: 3px 10px;
+    color: #44475a;
+}
+
+.title p {
+    color: white;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    color: #44475a;
+}
+
+.window-header {
     height: 30px;
     display: flex;
     align-items: center;
-    padding: 0 15px;
     gap: 10px;
-    border-bottom: 1px solid #44475a;
 }
 
 .circle {
@@ -69,7 +97,7 @@ body {
     gap: 1rem;
 }
 
-.icon {
+.sidebar-icon {
     background: none;
     border: none;
     color: #f8f8f2;
@@ -77,10 +105,11 @@ body {
     cursor: pointer;
 }
 
-.editor-wrapper {
+.editor-area {
     display: flex;
     flex: 1;
     overflow: hidden;
+    position: relative;
 }
 
 .line-numbers {
@@ -93,13 +122,13 @@ body {
     font-size: 1.2rem;
 }
 
-.editor {
+.code-editor {
     position: relative;
     flex: 1;
     padding: 2rem;
 }
 
-.editor h1 {
+.code-editor h1 {
     color: #bd93f9;
     font-size: 1.4rem;
     margin-bottom: 1rem;
@@ -112,17 +141,17 @@ body {
     gap: 10px;
 }
 
-.comment {
+.code-comment {
     color: #bd93f9;
     font-style: italic;
     font-size: 1rem;
 }
 
-.var {
+.code-var {
     color: #FF79C6;
 }
 
-.content-input {
+.input-group {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -154,21 +183,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.button {
+.run-button {
     position: absolute;
     top: 20px;
-    right: 20px;
-    padding: 0.4rem 1rem;
-    font-size: 1rem;
-    background-color: #28a745;
-    border: none;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.entendi {
-    display: inline-flex;
     right: 20px;
     padding: 0.4rem 1rem;
     font-size: 1rem;
@@ -181,20 +198,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: 'JetBrains Mono', monospace;
 }
 
-.button:hover {
+.run-button:hover {
     background-color: #218838;
-}
-
-#errorMsg {
-    color: #ff5555;
-    margin-top: 1rem;
-}
-
-#output {
-    margin-top: 1.5rem;
-    background-color: #44475a;
-    padding: 1rem;
-    border-radius: 4px;
 }
 
 footer {
@@ -211,7 +216,6 @@ footer {
 
 .modal {
     display: flex;
-    display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -226,9 +230,6 @@ footer {
 .modal-content {
     height: 500px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     background-color: black;
     margin: 10% auto;
     padding: 2rem;
@@ -248,7 +249,7 @@ footer {
     padding: 0;
 }
 
-.terminal-bar {
+.terminal-header {
     background-color: #21222c;
     display: flex;
     align-items: center;
@@ -261,23 +262,30 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
+    padding: 2rem;
+    flex: 1;
 }
 
 .terminal-body h2 {
     color: #50fa7b;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
 }
 
-.terminal-body p {
-    color: #f8f8f2;
-    white-space: pre-wrap;
+.modal-button {
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
 }
 
-.button:hover {
-    background-color: #3ae88e;
+.modal-button:hover {
+    background-color: #218838;
+}
+
+.terminal-output {
+    color: #8be9fd;
+    margin-top: 1rem;
 }
